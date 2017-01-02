@@ -1,8 +1,7 @@
-package logowanie.Admin;
+package logowanie.service;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
-
 /**
  * Created by Tomasz on 29.12.2016.
  */

@@ -22,8 +22,9 @@
       <option name="auto-sync" value="true" />
     </driver>
     <driver id="hsqldb.local" name="HSQLDB (Local)" dialect="HSQLDB">
-      <artifact name="HSQLDB" use="true" />
+      <artifact name="HSQLDB" use="true" version="2.3.2" />
       <option name="auto-sync" value="true" />
+      <option name="auto-commit" value="true" />
     </driver>
     <driver id="derby.remote" name="Derby (Remote)" dialect="Derby">
       <artifact name="Apache Derby" use="true" />

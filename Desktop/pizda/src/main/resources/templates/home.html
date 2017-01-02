@@ -16,7 +16,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+    <th:block th:include="fragments/head :: head"/>
 </head>
 <body>
 <div class="container-fluid">
@@ -30,7 +30,7 @@
             <h1 th:unless="${account}">Who are you?</h1>
 
             <form method="post" th:action="@{/logout}">
-                <!--<a href="/admin" class="btn btn-warning">Admin</a>-->
+                <a href="/admin" class="btn btn-warning">Admin</a>
                 <a href="/restricted" class="btn btn-primary">Restricted</a>
                 <input th:if="${account}" type="submit" class="btn btn-danger" value="Logout"/>
             </form>
