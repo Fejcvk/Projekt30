@@ -12,14 +12,23 @@
     <#if !currentUser??>
         <li><a href="/login">Log in</a></li>
         <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/user/resetpassword">Forgot Password?</a></li>
+        <li><a href="/getemail">Forgot Password?</a></li>
     </#if>
     <#if currentUser??>
-
-        <li><a href="/succes/${currentUser.userEmail}/${currentUser.id}">Send confirmation email</a></li>
+        <li>
+            <form action="/logout" method="post">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <button type="submit">Log out</button>
+            </form>
+        </li>
+        <li><a href="/user/${currentUser.id}">View myself</a></li>
     </#if>
-
+    <#if currentUser?? && currentUser.role == "ADMIN">
+        <li><a href="/user/create">Create a new user</a></li>
+        <li><a href="/users">View all users</a></li>
+    </#if>
     </ul>
+
 </nav>
 </body>
 </html>

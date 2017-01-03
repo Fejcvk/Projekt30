@@ -1,4 +1,6 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken"-->
+<#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
+<#import "/spring.ftl" as spring>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,15 +8,13 @@
 </head>
 <body>
 <nav role="navigation">
-    <h1>
-        <form role="form" action = "" method = "post">
-            <div>
+    <form role="form" action="/getmail" method="post">
+        <div>
             <label for="email">Email address</label>
-            <input type="email" name="email" id="email" value="${form.email}" required autofocus/>
-            </div>
-        </form>
-    </ul>
-    </h1>
+            <input type="email" name="email" id="email" required autofocus/>
+        </div>
+        <button type="submit">Reset password</button>
+    </form>
 </nav>
 </body>
 </html>
