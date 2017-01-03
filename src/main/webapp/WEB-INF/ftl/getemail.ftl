@@ -8,10 +8,10 @@
 </head>
 <body>
 <nav role="navigation">
-    <form role="form" action="/getmail" method="post">
+    <form role="form" action="/redirect" method="post">
         <div>
             <label for="email">Email address</label>
-            <input type="email" name="email" id="email" required autofocus/>
+            <input type="email" name="email" value="" id="email" required autofocus/>
         </div>
         <button type="submit">Reset password</button>
     </form>
