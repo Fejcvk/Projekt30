@@ -17,7 +17,7 @@ public class GetEmailController {
 //    public void initBinder(WebDataBinder binder) {
 //        binder.addValidators(userCreateFormValidator);
 //    }
-String dupa;
+String dupa2;
 
     @RequestMapping("/getemail")
     public ModelAndView getGetemailPage(@RequestParam Optional<String> error) {
