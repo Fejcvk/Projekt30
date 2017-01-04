@@ -7,8 +7,8 @@ import Login.service.mailUser.NotificationService;
 import Login.domain.User;
 import Login.domain.UserCreateForm;
 import Login.repository.UserRepository;
-//import Login.service.mailUser.ResetPasswordService;
-import Login.service.mailUser.ResetPasswordService;
+//
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private NotificationService notificationService;
 
-    @Autowired
-    private ResetPasswordService resetPasswordService;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
@@ -63,10 +61,6 @@ public class UserServiceImpl implements UserService {
         user.setRole(form.getRole());
         notificationService.sendNotification(user);
         return userRepository.save(user);
-    }
-
-    public void resetPassword(User user){
-        resetPasswordService.sendNewPassword(user);
     }
 
 }

@@ -1,3 +1,4 @@
+<#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken"-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
