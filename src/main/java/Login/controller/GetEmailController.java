@@ -23,11 +23,6 @@ public class GetEmailController {
 
         return new ModelAndView("redirect:/newpass", "error", error);
     }
-
-    @RequestMapping(value = "/newpass", method = RequestMethod.GET)
-    public ModelAndView getFinalPage(@RequestParam Optional<String> error) {
-
-        return new ModelAndView("/newpass", "error", error);
-    }
+    
 
 }
