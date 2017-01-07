@@ -11,13 +11,12 @@
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/getemail">Reset your password</a></li>
+        <li><a href="/forgot/password">Reset your password</a></li>
     </ul>
 </nav>
 
 <h1>Log in</h1>
 
-<p>You can use: demo@localhost / demo</p>
 
 <form role="form" action="/login" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

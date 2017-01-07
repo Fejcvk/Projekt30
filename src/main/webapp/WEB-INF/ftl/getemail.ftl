@@ -12,10 +12,9 @@
     <form role="form" action="/redirect" method="get">
         <div>
             <label for="email">Email address</label>
-            <input type="email" name="email" id="email" value="" required autofocus/>
+            <input type="email" name="email" id="email"/>
         </div>
         <button type="submit">Reset password</button>
     </form>
 </nav>
-</body>
-</html>
+

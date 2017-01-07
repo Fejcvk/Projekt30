@@ -1,21 +1,20 @@
-package Login.controller;
+package Login.service.mailUser;
 
+import Login.domain.User;
 import Login.repository.UserRepository;
 import Login.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Service;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
 
-@RestController
-public class ResetPasswordController {
+@Service
+public class ResetPasswordService {
 
     private final UserService userService;
     private JavaMailSender javaMailSender;
@@ -23,7 +22,7 @@ public class ResetPasswordController {
 
 
     @Autowired
-    public ResetPasswordController(UserService userService, UserRepository userRepository,JavaMailSender javaMailSender) {
+    public ResetPasswordService(UserService userService, UserRepository userRepository,JavaMailSender javaMailSender) {
         this.userService = userService;
         this.userRepository = userRepository;
         this.javaMailSender = javaMailSender;
@@ -32,19 +31,19 @@ public class ResetPasswordController {
 
 
 
-    @RequestMapping(value ="/resetPassword", method = RequestMethod.GET)
-    public ModelAndView getGetemailPage() {
+
+    public void resetPassword(String email) {
         SimpleMailMessage mail = new SimpleMailMessage();
         Random gen = new Random();
         CharSequence code;
         code = Float.toString(gen.hashCode());
-
+        User user = userRepository.findOneByEmail("dropboxjavaproject@gmail.com").get();
         userService.getUserByEmail("dropboxjavaproject@gmail.com").
                 orElseThrow((() -> new NoSuchElementException(String.format("User=%s not found","dropboxjavaproject@gmail.com"))))
                 .setPasswordHash(new BCryptPasswordEncoder().encode(code));
 
-        userRepository.save(userService.getUserByEmail("dropboxjavaproject@gmail.com").
-                orElseThrow((() -> new NoSuchElementException(String.format("User=%s not found","dropboxjavaproject@gmail.com" ))))
+        userRepository.save(userService.getUserByEmail(email).
+                orElseThrow((() -> new NoSuchElementException(String.format("User=%s not found","dropboxjavaproject@gmail.com"))))
         );
 
         mail.setTo("dropboxjavaproject@gmail.com");
@@ -52,7 +51,5 @@ public class ResetPasswordController {
         mail.setSubject("Password reset");
         mail.setText("Your new password is "+code);
         javaMailSender.send(mail);
-
-        return new ModelAndView("redirect:/");
     }
 }
