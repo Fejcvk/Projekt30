@@ -32,7 +32,8 @@ public class GetEmailController {
     private JavaMailSender javaMailSender;
 
     @Autowired
-    public GetEmailController(ResetPasswordService resetPasswordService, UserRepository userRepository, UserService userService, JavaMailSender javaMailSender) {
+    public GetEmailController(ResetPasswordService resetPasswordService, UserRepository userRepository,
+                              UserService userService, JavaMailSender javaMailSender) {
         this.resetPasswordService = resetPasswordService;
         this.userRepository = userRepository;
         this.userService = userService;
@@ -66,15 +67,19 @@ public class GetEmailController {
         mail.setText("Your new password is "+code);
         javaMailSender.send(mail);
 
-        return new ModelAndView("redirect:/newpass/"+email,"error",error);
+        return new ModelAndView("redirect:/newpass","error",error);
 
     }
 
-    @RequestMapping(value = "/newpass/{email}", method = RequestMethod.GET)
-    public ModelAndView goHomePage(@RequestParam Optional<String> error,@PathVariable String email) {
-        //resetPasswordService.resetPassword(email);
+    @RequestMapping(value = "/newpass", method = RequestMethod.GET)
+    public ModelAndView goHomePage(@RequestParam Optional<String> error) {
+       return new ModelAndView("newpass", "error", error);
+    }
 
+    @RequestMapping("/redirect")
+    public ModelAndView goHome(@RequestParam Optional<String> error) {
         return new ModelAndView("redirect:/", "error", error);
+
     }
 
 

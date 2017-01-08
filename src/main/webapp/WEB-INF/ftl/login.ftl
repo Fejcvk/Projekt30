@@ -11,7 +11,7 @@
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/forgot/password">Reset your password</a></li>
+        <li><a href="/getemail">Reset your password</a></li>
     </ul>
 </nav>
 
