@@ -8,7 +8,8 @@
 <body>
 <nav role="navigation">
     <ul>
-        <p> pass send </p>
+        <p> Password hes been send </p>
+        <li><a href="/login">Log in</a></li>
     </ul>
 </nav>
 </body>

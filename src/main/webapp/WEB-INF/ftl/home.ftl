@@ -12,7 +12,7 @@
     <#if !currentUser??>
         <li><a href="/login">Log in</a></li>
         <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/getemail">Forgot Password?</a></li>
+        <li><a href="/getemail">Forgot Password?
     </#if>
     <#if currentUser??>
         <li>
@@ -22,6 +22,7 @@
             </form>
         </li>
         <li><a href="/user/${currentUser.id}">View myself</a></li>
+        <li><a href="/resetpassword/${currentUser.id}">Set new password</a></li>
     </#if>
     <#if currentUser?? && currentUser.role == "ADMIN">
         <li><a href="/user/create">Create a new user</a></li>
