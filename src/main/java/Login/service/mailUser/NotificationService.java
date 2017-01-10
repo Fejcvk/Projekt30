@@ -33,4 +33,6 @@ public class NotificationService {
         mail.setText("Registered user with email "+user.getEmail()+ ". Your hash Code:"+code);
         javaMailSender.send(mail);
     }
+
+
 }

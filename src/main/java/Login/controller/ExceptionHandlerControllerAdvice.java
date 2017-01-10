@@ -15,7 +15,6 @@ import java.util.NoSuchElementException;
 @ControllerAdvice
 public class ExceptionHandlerControllerAdvice {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(ExceptionHandlerControllerAdvice.class);
 
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
