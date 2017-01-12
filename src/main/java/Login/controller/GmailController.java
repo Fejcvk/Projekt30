@@ -80,9 +80,9 @@ public class GmailController {
     @RequestMapping("/gmail")
     public static void GmailStart(String [] args) throws IOException {
         Gmail service = getGmailService();
-
         String user = "me";
-        ListLabelsResponse listResponse = service.users().labels().list(user).execute();
+        ListLabelsResponse listResponse =
+                service.users().labels().list(user).execute();
         List<Label> labels = listResponse.getLabels();
         if (labels.size() == 0) {
             System.out.println("No labels found.");
@@ -91,7 +91,6 @@ public class GmailController {
             for (Label label : labels) {
                 System.out.printf("- %s\n", label.getName());
             }
-
         }
     }
 }

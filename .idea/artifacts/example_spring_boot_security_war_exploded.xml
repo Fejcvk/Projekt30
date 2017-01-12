@@ -97,6 +97,8 @@
           <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" />
           <element id="library" level="project" name="Maven: com.google.apis:google-api-services-gmail:v1-rev53-1.22.0" />
+          <element id="library" level="project" name="AppEngine API" />
+          <element id="library" level="project" name="AppEngine ORM" />
         </element>
       </element>
       <element id="directory" name="META-INF">
