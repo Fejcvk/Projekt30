@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @ControllerAdvice
 public class CurrentUserControllerAdvice {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CurrentUserControllerAdvice.class);
 
     @ModelAttribute("currentUser")
     public CurrentUser getCurrentUser(Authentication authentication) {

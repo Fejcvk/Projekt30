@@ -22,7 +22,6 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
 
 
@@ -37,19 +36,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> getUserById(long id) {
-        LOGGER.debug("Getting user={}", id);
         return Optional.ofNullable(userRepository.findOne(id));
     }
 
     @Override
     public Optional<User> getUserByEmail(String email) {
-        LOGGER.debug("Getting user by email={}", email.replaceFirst("@.*", "@***"));
         return userRepository.findOneByEmail(email);
     }
 
     @Override
     public Collection<User> getAllUsers() {
-        LOGGER.debug("Getting all users");
         return userRepository.findAll(new Sort("email"));
     }
 
