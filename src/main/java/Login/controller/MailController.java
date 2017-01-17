@@ -10,9 +10,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.*;
 import javax.mail.internet.MimeBodyPart;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
+import com.sun.mail.imap.IMAPFolder;
+import com.sun.mail.imap.IMAPMessage;
 
 /**
  * Created by filip on 12.01.17.
@@ -21,8 +28,6 @@ import java.util.Properties;
 @RestController
 public class MailController {
 
-
-    //To jest wszystko do zmiany ale nie wiem jak to kurwa ogarnąć
 
     @RequestMapping("/gmail")
     public ModelAndView getGetemailPage(@RequestParam Optional<String> error) {
@@ -35,20 +40,31 @@ public class MailController {
                                   @RequestParam String email,@RequestParam String password) throws MessagingException, IOException {
 
 
-        String host = "pop.gmail.com";
-        String mailStoreType = "pop3";
-        String port = "995";
-        Properties properties = new Properties();
+//        String host = "imap.gmail.com";
+//        String mailStoreType = "imap";
+//        String port = "993";
+//        Properties properties = new Properties();
+//
+//        properties.put("mail.imap.host", host);
+//        properties.put("mail.imap.port", port);
+//        properties.put("mail.imap.starttls.enable", "true");
+//        Session emailSession = Session.getDefaultInstance(properties);
+//
+//        //create the POP3 store object and connect with the pop server
+//        Store store = emailSession.getStore("imap");
+//
+//        store.connect(host, email, password);
+        IMAPFolder folder = null;
+        Store store = null;
+        String subject = null;
+        Flags.Flag flag = null;
+        Properties props = System.getProperties();
+        props.setProperty("mail.store.protocol", "imaps");
 
-        properties.put("mail.pop3.host", host);
-        properties.put("mail.pop3.port", port);
-        properties.put("mail.pop3.starttls.enable", "true");
-        Session emailSession = Session.getDefaultInstance(properties);
+        Session session = Session.getDefaultInstance(props, null);
 
-        //create the POP3 store object and connect with the pop server
-        Store store = emailSession.getStore("pop3s");
-
-        store.connect(host, email, password);
+        store = session.getStore("imaps");
+        store.connect("imap.googlemail.com",email, password);
 
         //create the folder object and open it
         Folder emailFolder = store.getFolder("INBOX");
@@ -57,7 +73,6 @@ public class MailController {
         // retrieve the messages from the folder in an array and print it
         Message[] messages = emailFolder.getMessages();
         for (int i = 0, n = messages.length; i < n; i++) {
-
             Message message = messages[i];
             String contentType = message.getContentType();
             if (contentType.contains("multipart")) {
@@ -65,7 +80,19 @@ public class MailController {
                 int numberOfParts = multiPart.getCount();
                 for (int partCount = 0; partCount < numberOfParts; partCount++) {
                     MimeBodyPart part = (MimeBodyPart) multiPart.getBodyPart(partCount);
+                    List<File> attachments = new ArrayList<File>();
                     if (Part.ATTACHMENT.equalsIgnoreCase(part.getDisposition())) {
+
+                        InputStream is = part.getInputStream();
+                        File f = new File("C:\\Att/" +i + part.getFileName());
+                        FileOutputStream fos = new FileOutputStream(f);
+                        byte[] buf = new byte[4096];
+                        int bytesRead;
+                        while((bytesRead = is.read(buf))!=-1) {
+                            fos.write(buf, 0, bytesRead);
+                        }
+                        fos.close();
+                        attachments.add(f);
 
                         System.out.println("---------------------------------");
                         System.out.println("Email Number " + (i + 1));
