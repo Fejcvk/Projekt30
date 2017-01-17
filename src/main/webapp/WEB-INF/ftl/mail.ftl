@@ -17,7 +17,7 @@
             </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div>
-                <label for="password">Old password</label>
+                <label for="password">Password</label>
                 <input type="password" name="password" id="password" required/>
             </div>
         </div>

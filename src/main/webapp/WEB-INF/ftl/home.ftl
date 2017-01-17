@@ -24,6 +24,7 @@
         <li><a href="/user/${currentUser.id}">View myself</a></li>
         <li><a href="/gmail">Connect 2 GMAIL</a></li>
         <li><a href="/resetpassword/${currentUser.id}">Set new password</a></li>
+        <li><a href="/sendatt">Send att</a></li>
     </#if>
     <#if currentUser?? && currentUser.role == "ADMIN">
         <li><a href="/user/create">Create a new user</a></li>

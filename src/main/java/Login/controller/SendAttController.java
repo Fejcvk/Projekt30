@@ -1,7 +1,15 @@
-package Login.service.mailUser;
+package Login.controller;
 
-import Login.domain.User;
-import org.springframework.stereotype.Service;
+import Login.repository.UserRepository;
+
+import Login.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -11,19 +19,36 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.util.Optional;
 import java.util.Properties;
 
 /**
- * Created by filip on 12.01.17.
+ * Created by karol on 17.01.2017.
  */
+@Controller
+public class SendAttController{
 
-@Service
-public class SendingAttachementService {
+    private UserRepository userRepository;
+    private UserService userService;
+    private JavaMailSender javaMailSender;
 
+    @Autowired
+    public SendAttController( UserRepository userRepository,
+        UserService userService, JavaMailSender javaMailSender){
+            this.userRepository = userRepository;
+            this.userService = userService;
+            this.javaMailSender = javaMailSender;
+        }
+    @RequestMapping("/sendatt")
+    public ModelAndView getGetemailPage(@RequestParam Optional<String> error) {
+        return new ModelAndView("/sendattachment", "error", error);
 
-    public void sendAttachement(User user, String path)
-    {
-        String to = user.getEmail();
+    }
+
+    @RequestMapping(value = "/att", method = RequestMethod.GET)
+    public ModelAndView getRedirect(@RequestParam Optional<String> error, @RequestParam String email,
+                                    @RequestParam String path) {
+        String to = email;
         String from = "dropboxjavaproject@gmail.com";
         final String username = "dropboxjavaproject@gmail.com";
         final String password = "dropboxjava";
@@ -90,5 +115,9 @@ public class SendingAttachementService {
         }
 
 
+
+
+        return new ModelAndView("redirect:/");
     }
+
 }

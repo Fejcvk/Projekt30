@@ -2,7 +2,6 @@ package Login.controller;
 
 import Login.domain.User;
 import Login.repository.UserRepository;
-import Login.service.mailUser.ResetPasswordService;
 import Login.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -25,16 +24,13 @@ import static org.springframework.http.HttpMethod.GET;
 
 @Controller
 public class GetEmailController {
-
-    private ResetPasswordService resetPasswordService;
     private UserRepository userRepository;
     private UserService userService;
     private JavaMailSender javaMailSender;
 
     @Autowired
-    public GetEmailController(ResetPasswordService resetPasswordService, UserRepository userRepository,
+    public GetEmailController(UserRepository userRepository,
                               UserService userService, JavaMailSender javaMailSender) {
-        this.resetPasswordService = resetPasswordService;
         this.userRepository = userRepository;
         this.userService = userService;
         this.javaMailSender = javaMailSender;
