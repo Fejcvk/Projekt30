@@ -7,10 +7,6 @@ import Login.service.mailUser.NotificationService;
 import Login.domain.User;
 import Login.domain.UserCreateForm;
 import Login.repository.UserRepository;
-//
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

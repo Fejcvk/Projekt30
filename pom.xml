@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>eu.kielczewski.example</groupId>
-    <artifactId>example-spring-boot-security</artifactId>
+    <groupId>Login</groupId>
+    <artifactId>DropboxJava</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -15,9 +15,7 @@
         <version>1.2.0.RELEASE</version>
     </parent>
 
-    <name>Spring Boot Security Example</name>
-    <url>http://kielczewski.eu/2014/12/spring-boot-security-application/</url>
-
+    <name>Dropboxjava</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>

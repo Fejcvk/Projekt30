@@ -6,8 +6,6 @@ package Login.service.currentser;
 import Login.domain.CurrentUser;
 import Login.domain.User;
 import Login.service.user.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
