@@ -5,14 +5,15 @@
 <head>
     <meta charset="utf-8">
     <title>Log in</title>
+    <link href="/css/logincss.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <nav role="navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/getemail">Reset your password</a></li>
-    </ul>
+    <ul1>
+        <li1><a href="/">Home</a></li1>
+        <li1><a href="/user/create">Create new user</a></li1>
+        <li1><a href="/getemail">Reset your password</a></li1>
+    </ul1>
 </nav>
 
 <h1>Log in</h1>
@@ -23,11 +24,11 @@
 
     <div>
         <label for="email">Email address</label>
-        <input type="email" name="email" id="email" required autofocus/>
+        <input type="email" name="email" id="email" placeholder="Your email..." required autofocus/>
     </div>
     <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required/>
+        <input type="password" name="password" id="password" placeholder="Password..." required autofocus/>
     </div>
     <div>
         <label for="remember-me">Remember me</label>

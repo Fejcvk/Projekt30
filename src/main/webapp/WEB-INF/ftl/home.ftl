@@ -5,32 +5,39 @@
 <head>
     <meta charset="utf-8">
     <title>Home page</title>
+    <link href="/css/homecss.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <nav role="navigation">
-    <ul>
     <#if !currentUser??>
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/user/create">Create new user</a></li>
-        <li><a href="/getemail">Forgot Password?
+    <ul1>
+        <li1><a href="/login">Log in</a></li1>
+        <li1><a href="/user/create">Create new user</a></li1>
+        <li1><a href="/getemail">Forgot Password?
+    </ul1>
     </#if>
     <#if currentUser??>
-        <li>
             <form action="/logout" method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button type="submit">Log out</button>
             </form>
-        </li>
-        <li><a href="/user/${currentUser.id}">View myself</a></li>
-        <li><a href="/gmail">Connect 2 GMAIL</a></li>
-        <li><a href="/resetpassword/${currentUser.id}">Set new password</a></li>
+        <ul2>
+        <li2><a href="/user/${currentUser.id}">View myself</a></li2>
+        <li2><a href="/gmail">Gmail</a> </li2>
+        <li2><a href="/resetpassword/${currentUser.id}">Set new password</a></li2>
+        </ul2>
     </#if>
     <#if currentUser?? && currentUser.role == "ADMIN">
-        <li><a href="/user/create">Create a new user</a></li>
-        <li><a href="/users">View all users</a></li>
+        <ul3>
+            <li3 class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Admin Panel</a>
+                <div class="dropdown-content">
+                    <a href="/user/create">Create a new user</a>
+                    <a href="/users">View all users</a>
+                </div>
+            </li3>
+        </ul3>
     </#if>
-
-    </ul>
 
 </nav>
 </body>

@@ -7,6 +7,7 @@
 <head>
     <meta charset="utf-8">
     <title>Create a new user</title>
+     <link href="/css/createuser.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <nav role="navigation">
@@ -22,15 +23,15 @@
 
     <div>
         <label for="email">Email address</label>
-        <input type="email" name="email" id="email" value="${form.email}" required autofocus/>
+        <input type="email" name="email" id="email" value="${form.email}" placeholder="Email..." required autofocus/>
     </div>
     <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required/>
+        <input type="password" name="password" id="password" placeholder="Password..." required/>
     </div>
     <div>
         <label for="passwordRepeated">Repeat</label>
-        <input type="password" name="passwordRepeated" id="passwordRepeated" required/>
+        <input type="password" name="passwordRepeated" id="passwordRepeated" placeholder="Repeat password..." required/>
     </div>
     <button type="submit">Save</button>
 </form>

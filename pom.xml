@@ -8,15 +8,12 @@
     <artifactId>example-spring-boot-security</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.2.0.RELEASE</version>
     </parent>
 
-    <name>Spring Boot Security Example</name>
-    <url>http://kielczewski.eu/2014/12/spring-boot-security-application/</url>
 
     <properties>
         <java.version>1.8</java.version>
@@ -99,10 +96,27 @@
             <version>1.22.0</version>
         </dependency>
         <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-servlet</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.apis</groupId>
             <artifactId>google-api-services-gmail</artifactId>
             <version>v1-rev53-1.22.0</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-plus</artifactId>
+            <version>v1-rev137-1.19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+
+    </dependencies>
 </project>
