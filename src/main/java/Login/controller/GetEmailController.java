@@ -1,16 +1,13 @@
 package Login.controller;
 
-import Login.domain.User;
 import Login.repository.UserRepository;
-import Login.service.mailUser.ResetPasswordService;
 import Login.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,21 +17,17 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Random;
 
-import static org.springframework.http.HttpMethod.GET;
 
 
 @Controller
 public class GetEmailController {
-
-    private ResetPasswordService resetPasswordService;
     private UserRepository userRepository;
     private UserService userService;
     private JavaMailSender javaMailSender;
 
     @Autowired
-    public GetEmailController(ResetPasswordService resetPasswordService, UserRepository userRepository,
+    public GetEmailController(UserRepository userRepository,
                               UserService userService, JavaMailSender javaMailSender) {
-        this.resetPasswordService = resetPasswordService;
         this.userRepository = userRepository;
         this.userService = userService;
         this.javaMailSender = javaMailSender;

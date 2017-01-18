@@ -21,12 +21,20 @@
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button type="submit">Log out</button>
             </form>
+
+
+
         <ul2>
         <li2><a href="/user/${currentUser.id}">View myself</a></li2>
         <li2><a href="/gmail">Gmail</a> </li2>
         <li2><a href="/resetpassword/${currentUser.id}">Set new password</a></li2>
             <li2><a href="/sendatt">Send att</a></li2>
         </ul2>
+        </li>
+        <li><a href="/user/${currentUser.id}">View myself</a></li>
+        <li><a href="/gmail">Connect 2 GMAIL</a></li>
+        <li><a href="/resetpassword/${currentUser.id}">Set new password</a></li>
+        <li><a href="/sendatt">Send att</a></li>
     </#if>
     <#if currentUser?? && currentUser.role == "ADMIN">
         <ul3>
