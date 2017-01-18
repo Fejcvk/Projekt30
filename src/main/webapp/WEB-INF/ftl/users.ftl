@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>List of Users</title>
+    <link href="/css/users.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <nav role="navigation">

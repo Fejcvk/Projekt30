@@ -1,0 +1,41 @@
+body{
+    background-image: url("footer_lodyas.png");
+}
+
+ul{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+}
+li{
+    display: inline;
+}
+li a {
+    text-align: center;
+    color: lightgrey;
+    padding: 2px 4px;
+    text-decoration: none;
+}
+li a:hover
+{
+    color: skyblue;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10%;
+    font-family: "Bebas Neue";
+    font-size: 76px;
+    color: white;
+}
+p{
+    display: block;
+    text-align: center;
+    color: lightgrey;
+    padding: 2px 4px;
+    text-decoration: none;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+}

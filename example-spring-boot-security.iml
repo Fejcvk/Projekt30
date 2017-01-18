@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" version="4">
   <component name="FacetManager">
     <facet type="web" name="Web">
       <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
@@ -115,6 +118,17 @@
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
+    <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client-servlet:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jdo:1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Maven: javax.jdo:jdo2-api:2.3-eb" level="project" />
+    <orderEntry type="library" name="Maven: javax.transaction:transaction-api:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-gmail:v1-rev53-1.22.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.apis:google-api-services-plus:v1-rev137-1.19.0" level="project" />
+    <orderEntry type="library" name="Maven: com.jayway.restassured:json-path:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: com.jayway.restassured:rest-assured-common:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
   </component>
 </module>
