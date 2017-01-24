@@ -1,12 +1,7 @@
 <application>
   <component name="WindowStateApplicationService">
-    <state x="121" y="85" width="1024" height="581" key="DiffContextDialog" />
-    <state x="121" y="85" width="1024" height="581" key="DiffContextDialog/0.0.1280.800" />
-    <state x="121" y="85" width="1024" height="581" key="DiffContextDialog/0.0.1280.800@0.0.1280.800" />
-    <state x="99" y="123" width="1080" height="527" key="git4idea.ui.branch.GitCompareBranchesDialog" />
-    <state x="99" y="123" width="1080" height="527" key="git4idea.ui.branch.GitCompareBranchesDialog/-1680.0.1680.1050/0.0.1680.1050" />
-    <state x="99" y="123" width="1080" height="527" key="git4idea.ui.branch.GitCompareBranchesDialog/-1680.0.1680.1050/0.0.1680.1050@-1680.0.1680.1050" />
-    <state x="100" y="123" width="1080" height="527" key="git4idea.ui.branch.GitCompareBranchesDialog/0.0.1280.800" />
-    <state x="100" y="123" width="1080" height="527" key="git4idea.ui.branch.GitCompareBranchesDialog/0.0.1280.800@0.0.1280.800" />
+    <state x="100" y="123" width="1480" height="823" key="git4idea.ui.branch.GitCompareBranchesDialog" />
+    <state x="100" y="123" width="1480" height="823" key="git4idea.ui.branch.GitCompareBranchesDialog/0.0.1680.1050/-1680.0.1680.1050" />
+    <state x="100" y="123" width="1480" height="823" key="git4idea.ui.branch.GitCompareBranchesDialog/0.0.1680.1050/-1680.0.1680.1050@0.0.1680.1050" />
   </component>
 </application>
