@@ -1,0 +1,62 @@
+body{
+    background-image: url("footer_lodyas.png");
+}
+
+ul{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+}
+li{
+    display: inline;
+}
+li a {
+    text-align: center;
+    color: lightgrey;
+    padding: 2px 4px;
+    text-decoration: none;
+}
+li a:hover
+{
+    color: skyblue;
+}
+h1{
+    text-align: center;
+    margin-top: 10%;
+    font-family: "Bebas Neue";
+    font-size: 75px;
+    color: white;
+}
+table
+{
+    color: lightgrey;
+    text-align: center;
+    margin-left: 4%;
+    color: white;
+    display: inline;
+    width: 100%;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+    padding: 15px 36px;
+}
+tr{
+    display: inline;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+}
+td a{
+    text-align: center;
+    color: lightgrey;
+    padding: 2px 4px;
+    text-decoration: none;
+}
+thread{
+    color: white;
+    display: inline;
+    width: 100%;
+    font-family: "Bebas Neue";
+    font-size: 40px;
+    padding: 15px 36px;
+}
